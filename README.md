@@ -67,3 +67,16 @@ val userNameFlow: Flow<String> = preferenceDataStore.data.map {
 }.catch { exception -> handleException(exception) }
 ```
 
+# Store data 
+
+```
+    suspend fun storeUserData(userName: String, age: Int, location: String, status: Boolean) {
+        preferenceDataStore.edit { profile ->
+            profile[USERNAME] = userName
+            profile[AGE] = age
+            profile[LOCATION] = location
+            profile[IS_ACCOUNT_ACTIVE] = status
+        }
+    }
+    
+    ```
