@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">DataStore</string>
+
+    <string name="user_username">Name</string>
+    <string name="user_age">Age</string>
+    <string name="user_location">Location</string>
+    <string name="user_account_status">Account Status</string>
+</resources>
