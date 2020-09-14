@@ -1,5 +1,24 @@
 
-# Preferences DataStore overview
+# Q What is Datastore ?
+* Jetpack DataStore is a data storage solution.
+*	It allows you to store key-value pairs like “SharedPrefrences” of typed object with protocal buffers.
+*	DataStore uses Kotlin, Coroutines and Flow to store data asynchronously with consistency and transaction support .
+*	it’s the new data storage solution which is the replacement of SharedPrefrences .
+
+# Q why DataStore ?
+* Build with Kotlin, Coroutines and Flow.
+* SharedPreference has some drawbacks like it provided synchronous APIs -but it’s not MAIN-thread-safe! whereas DataStore is safe to use in UI thread because it uses Dispatchers.IO under the hood
+* It’s safe from runtime exceptions!
+* It also provides a way to migrate from SharedPreferences
+* It provides Type safety! (Using Protocol buffers).
+
+# DataStore provides two different types of implementations to store data.
+* Preference DataStore — This uses key-value pairs to store data. But it doesn’t provide type-safety :
+* Proto DataStore — It stores data as a custom type with specified schema using Protocol Buffers
+
+# Room vs DataStore
+* If you have a need for partial updates, referential integrity, or large/complex datasets, you should consider using Room instead of DataStore. 
+* DataStore is ideal for small or simple datasets and does not support partial updates or referential integrity.
 
 ## Preferences DataStore API is similar to SharedPreferences with several notable differences:
 *	Handles data updates transactionally
@@ -8,6 +27,7 @@
 *	Does not return mutable references to its internal state
 *	Exposes an API similar to Map and MutableMap with typed keys
 
+# Preferences DataStore Setup 
 
 ## Adding dependencies
 * Update the build.gradle file to add the following the Preference DataStore dependency:
