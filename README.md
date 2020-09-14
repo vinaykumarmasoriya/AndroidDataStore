@@ -69,7 +69,7 @@ val userNameFlow: Flow<String> = preferenceDataStore.data.map {
 
 # Store data 
 
-```
+```kotlin
     suspend fun storeUserData(userName: String, age: Int, location: String, status: Boolean) {
         preferenceDataStore.edit { profile ->
             profile[USERNAME] = userName
@@ -78,5 +78,4 @@ val userNameFlow: Flow<String> = preferenceDataStore.data.map {
             profile[IS_ACCOUNT_ACTIVE] = status
         }
     }
-    
     ```
